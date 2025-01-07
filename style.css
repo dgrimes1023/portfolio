@@ -48,7 +48,7 @@ section h2 {
 }
 
 #about img {
-  max-width: 150px; /* Adjust image size */
+  max-width: 225px; /* Adjust image size */
   height: auto; /* Maintain aspect ratio */
   border-radius: 50%; /* Circular image */
   border: 5px solid deepskyblue; /* Add border */
@@ -57,6 +57,10 @@ section h2 {
 
 #about p {
   margin: 0; /* Remove unnecessary margin */
+}
+
+#about h2 {
+  text-align: center; /* Center the heading */
 }
 
 
@@ -107,4 +111,15 @@ footer {
   margin-top: 2rem;
 }
 
+@media (max-width: 768px) {
+  #about {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center-align content */
+  }
+
+  #about img {
+    order: -1; /* Move image to the top */
+    margin-bottom: 1rem; /* Add spacing below the image */
+  }
+}
 
