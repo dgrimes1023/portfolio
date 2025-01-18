@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portfolio website of a junior computer science student seeking opportunities.">
   <title>Daniel Grimes' Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
+
 <body>
   <!-- Header Section -->
   <header>
+    <div id="particles-js"></div>
     <h1>Daniel Grimes</h1>
-    <p>Junior Software Developer  |  Computer Science Student</p>
+    <p><span class="typed"></span></p>
   </header>
 
   <!-- About Section -->
@@ -20,55 +27,206 @@
     <div>
       <h2>About Me</h2>
       <p>
-        Hi, I’m Daniel Grimes, a junior Computer Science major with a minor in Finance 
-        at Ohio University, graduating in May 2026. As an aspiring developer, I’m passionate 
-        about creating impactful solutions and am currently building a platform for task-based 
-        jobs. I am actively seeking co-op or internship opportunities where I can contribute 
+        Hi, I’m Daniel Grimes, a junior Computer Science major with a minor in Finance
+        at Ohio University, graduating in May 2026. As an aspiring developer, I’m passionate
+        about creating impactful solutions and am currently building a platform for task-based
+        jobs. I am actively seeking co-op or internship opportunities where I can contribute
         to innovative projects, apply my skills, and grow as a developer. Let’s connect!
       </p>
     </div>
   </section>
-  
+
 
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
     <ul>
-      <li>Programming Languages: Python, Java, C++, JavaScript</li>
-      <li>Web Development: HTML, CSS, React</li>
-      <li>Version Control: Git, GitHub</li>
-      <li>Problem Solving and Algorithms</li>
+      <li>Programming Languages: Python, C++, JavaScript, Ocaml</li>
+      <li>Web Development: HTML, CSS, React.js, Next.js, Node.js</li>
+      <li>Tools: Git, GitHub, Figma</li>
+      <li>Database Management: MySQL, MongoDB</li>
+      <li>Operating Systems: Windows, Linux</li>
+      <li>Data Analysis & Analytical Thinking</li>
+      <li>Debugging and Unit Testing</li>
     </ul>
   </section>
 
   <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>TaskBoard Website</h3>
-      <p>A job board-style website for task-based jobs. Built with HTML, CSS, and JavaScript.</p>
-    </div>
-    <div class="project">
-      <h3>Expense Tracker</h3>
-      <p>A personal finance tracker developed in Python, helping users monitor their spending.</p>
-    </div>
-    <div class="project">
-      <h3>Pathfinding Visualizer</h3>
-      <p>A web-based tool that visualizes popular pathfinding algorithms like A* and Dijkstra.</p>
-    </div>
+
+    <a href="https://github.com/dgrimes1023/QuickChores" target="_blank" style="text-decoration: none; color: inherit;">
+      <div class="project">
+        <h3>QuickChores – Task-Based Job Platform</h3>
+        <p>
+          Developing a platform where users can post and complete tasks like cleaning, yard care, and moving assistance.
+          Built the main page with Next.js and Node.js, with a focus on responsive design using Tailwind CSS.
+        </p>
+      </div>
+    </a>
+
+    <a href="https://github.com/OU-CS3560/s24-wordle-fibble-3" target="_blank" style="text-decoration: none; color: inherit;">
+      <div class="project">
+        <h3>Wordle Recreation with AI Solver</h3>
+        <p>
+          Recreated the game "Wordle" with a five-person team, contributing to the dynamic GUI and AI algorithm
+          for solving puzzles. Technologies: Python, Pygame, and GitHub.
+        </p>
+      </div>
+    </a>
+
+    <a href="https://github.com/dgrimes1023/BoopGame" target="_blank" style="text-decoration: none; color: inherit;">
+      <div class="project">
+        <h3>Boop – Strategy Board Game</h3>
+        <p>
+          Created a custom board game using C++ by integrating a pre-existing Game class and developing
+          a Boop class for specific rules. Used tools like GDB, Valgrind, and GitHub.
+        </p>
+      </div>
+    </a>
   </section>
+
 
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:dg298321@ohio.edu">dg298321@ohio.edu</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/daniel-grimes1023/" target="_blank">linkedin.com/in/daniel-grimes1023</a></p>
-    <p>GitHub: <a href="https://github.com/dgrimes1023" target="_blank">github.com/dgrimes1023</a></p>
+    <div class="contact-links">
+      <a href="tel:+13305818990" class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>(330) 581-8990</span>
+      </a>
+      <a href="mailto:dg298321@ohio.edu" class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>dg298321@ohio.edu</span>
+      </a>
+      <a href="https://www.linkedin.com/in/daniel-grimes1023/" target="_blank" class="contact-item">
+        <i class="fab fa-linkedin"></i>
+        <span>linkedin.com/in/daniel-grimes1023</span>
+      </a>
+      <a href="https://github.com/dgrimes1023" target="_blank" class="contact-item">
+        <i class="fab fa-github"></i>
+        <span>github.com/dgrimes1023</span>
+      </a>
+    </div>
   </section>
 
   <!-- Footer Section -->
   <footer>
     <p>&copy; 2025 Daniel Grimes. All rights reserved.</p>
   </footer>
+
+  <div class="scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script>
+    // Scroll to top functionality
+    const scrollBtn = document.querySelector('.scroll-top');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollBtn.classList.add('visible');
+      } else {
+        scrollBtn.classList.remove('visible');
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 100,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: { value: '#ffffff' },
+        opacity: {
+          value: 0.7,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.4,
+            sync: false
+          }
+        },
+        size: {
+          value: 4,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 2,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: '#ffffff',
+          opacity: 0.5,
+          width: 1.5
+        },
+        move: {
+          enable: true,
+          speed: 4,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "bounce",
+          bounce: true,
+          attract: {
+            enable: true,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: {
+            enable: true,
+            mode: "repulse"
+          },
+          onclick: {
+            enable: true,
+            mode: "push"
+          },
+          resize: true
+        },
+        modes: {
+          repulse: {
+            distance: 100,
+            duration: 0.4
+          },
+          push: {
+            particles_nb: 4
+          }
+        }
+      },
+      retina_detect: true
+    });
+
+    new Typed('.typed', {
+      strings: [
+        'Junior Software Developer',
+        'Computer Science Student',
+        'Exploring AI Research',
+        'Problem Solver',
+      ],
+      typeSpeed: 40,
+      backSpeed: 30,
+      loop: true
+    });
+  </script>
 </body>
+
 </html>

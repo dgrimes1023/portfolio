@@ -1,28 +1,77 @@
 /* General Reset */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 /* Header Section */
 header {
-  background-color: deepskyblue;
+  background: linear-gradient(135deg, deepskyblue, #0077be);
   color: whitesmoke;
   text-align: center;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+header h1, 
+header p,
+header .typed {
+  position: relative;
+  z-index: 2;
+  margin: 0;
 }
 
 header h1 {
   font-size: 3rem;
-  margin: 0;
+  animation: fadeInDown 1s ease-out;
 }
 
 header p {
-  font-size: 1.5rem;
-  margin: 0.5rem 0 0;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Add animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Section Styles */
@@ -33,10 +82,23 @@ section {
 }
 
 section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #ddd;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: none;
   padding-bottom: 0.5rem;
+  position: relative;
+  color: #2c3e50;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, deepskyblue, #0077be);
+  border-radius: 2px;
 }
 
 /* About Section Layout */
@@ -48,11 +110,16 @@ section h2 {
 }
 
 #about img {
-  max-width: 225px; /* Adjust image size */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 50%; /* Circular image */
-  border: 5px solid deepskyblue; /* Add border */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  max-width: 250px;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+#about img:hover {
+  transform: scale(1.05);
 }
 
 #about p {
@@ -68,28 +135,47 @@ section h2 {
 #skills ul {
   list-style: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
 }
 
 #skills li {
   background-color: #f4f4f4;
   margin: 0.5rem 0;
-  padding: 0.5rem;
-  border-radius: 5px;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border-left: 4px solid deepskyblue;
+}
+
+#skills li:hover {
+  transform: translateX(10px);
+  background-color: #e8f4ff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Projects Section */
 .project {
-  background-color: #f9f9f9;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f8fbff;
 }
 
 .project h3 {
   margin: 0;
   font-size: 1.5rem;
+  color: #2c3e50;
 }
 
 /* Contact Section */
@@ -104,11 +190,10 @@ section h2 {
 
 /* Footer Section */
 footer {
-  text-align: center;
-  background-color: #333;
+  background: linear-gradient(135deg, #2c3e50, #3498db);
   color: #fff;
-  padding: 1rem 0;
-  margin-top: 2rem;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
 }
 
 @media (max-width: 768px) {
@@ -121,5 +206,76 @@ footer {
     order: -1; /* Move image to the top */
     margin-bottom: 1rem; /* Add spacing below the image */
   }
+}
+
+/* Contact Section */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #333;
+}
+
+.contact-item:hover {
+    background-color: #e8f4ff;
+    transform: translateX(10px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: deepskyblue;
+    width: 2rem;
+    text-align: center;
+}
+
+.contact-item span {
+    font-size: 1.1rem;
+}
+
+/* Make contact section responsive */
+@media (max-width: 768px) {
+    .contact-links {
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        padding: 0.8rem;
+    }
+}
+
+/* Add scroll-to-top button */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: deepskyblue;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top.visible {
+    opacity: 1;
 }
 
