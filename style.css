@@ -279,3 +279,31 @@ footer {
     opacity: 1;
 }
 
+/* Add these styles for the project buttons */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #0077be;
+    color: white;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.project-button:hover {
+    background-color: #005c91;
+    transform: translateY(-2px);
+}
+
+.project-button i {
+    font-size: 1rem;
+}
+
