@@ -134,6 +134,84 @@ section h2::after {
   text-align: center; /* Center the heading */
 }
 
+/* Education Section */
+#education .education-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #eee;
+}
+
+#education .education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  background-color: #f8fbff;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.education-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.education-date {
+  color: #666;
+  font-weight: 500;
+}
+
+.education-degree {
+  color: #0077be;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.education-minor {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.education-details {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.education-details li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.education-details li::before {
+  content: "•";
+  color: deepskyblue;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Add responsive styling for education section */
+@media (max-width: 768px) {
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .education-date {
+    font-size: 0.9rem;
+  }
+}
 
 /* Skills Section */
 #skills ul {
