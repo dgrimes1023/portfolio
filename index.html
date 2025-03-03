@@ -22,6 +22,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#involvement">Involvement</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -145,8 +146,10 @@
     </div>
 
     <div class="involvement-card">
-      <h3>Sigma Alpha Epsilon Fraternity</h3>
-      <span class="involvement-date">August 2023 - Present</span>
+      <div class="involvement-header">
+        <h3>Sigma Alpha Epsilon Fraternity</h3>
+        <span class="involvement-date">August 2023 - Present</span>
+      </div>
       <p class="involvement-role">Member</p>
       <ul class="involvement-details">
         <li>Participated in philanthropic events and community service projects</li>
@@ -155,6 +158,51 @@
         <li>Contributed to fundraising efforts for charitable organizations</li>
         <li>Collaborated with fellow members to foster a strong and supportive community</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section id="experience">
+    <h2>Work Experience</h2>
+    
+    <div class="experience-card">
+      <div class="experience-header" onclick="toggleDetails(this)">
+        <div class="header-main">
+          <h3>Lowe's Companies, Inc.</h3>
+          <p class="experience-role">Sales Floor Associate</p>
+        </div>
+        <div class="dropdown-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+      <div class="experience-content">
+        <span class="experience-date">April 2024 - Present</span>
+        <ul class="experience-details">
+          <li>Cultivated strong relationships with contractors and local customers, promoting loyalty, repeat business, and community trust in Lowe’s services.</li>
+          <li>Collaborated with cross-functional teams by covering shifts across multiple departments, enhancing store-wide efficiency and adaptability.</li>
+          <li>Assisted customers by providing expert product knowledge and personalized recommendations, ensuring a seamless shopping experience.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <div class="experience-header" onclick="toggleDetails(this)">
+        <div class="header-main">
+          <h3>Canvass America</h3>
+          <p class="experience-role">Political Canvasser</p>
+        </div>
+        <div class="dropdown-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+      <div class="experience-content">
+        <span class="experience-date">June 2024 - November 2024</span>
+        <ul class="experience-details">
+          <li>Engaged with diverse communities through meaningful face-to-face conversations, effectively communicating campaign messages and addressing voter concerns.</li>
+          <li>Collaborated with team members to maximize efficiency, share insights, and contribute to a dynamic and results-driven canvassing operation.</li>
+          <li>Built rapport and trust with potential voters, using active listening and persuasive speaking to encourage civic engagement.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -290,13 +338,17 @@
       strings: [
         'Junior Software Developer',
         'Computer Science Student',
-        'Exploring AI Research',
-        'Problem Solver',
+        'Ohio University',
       ],
       typeSpeed: 40,
       backSpeed: 30,
       loop: true
     });
+
+    function toggleDetails(header) {
+      const card = header.closest('.experience-card');
+      card.classList.toggle('active');
+    }
   </script>
 </body>
 
