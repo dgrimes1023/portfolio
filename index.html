@@ -36,16 +36,89 @@
 
   <!-- About Section -->
   <section id="about">
-    <img src="https://raw.githubusercontent.com/dgrimes1023/portfolio/main/IMG_1046.JPEG" alt="Daniel Grimes portrait">
+  <img src="professional_headshot1.jpeg" alt="Daniel Grimes professional headshot">
     <div>
-      <h2>About Me</h2>
-      <p>
-        Hi, I'm Daniel Grimes, a junior Computer Science major with a minor in Finance
-        at Ohio University, graduating in May 2026. As an aspiring developer, I'm passionate
-        about creating impactful solutions and am currently building a platform for task-based
-        jobs. I am actively seeking co-op or internship opportunities where I can contribute
-        to innovative projects, apply my skills, and grow as a developer. Let's connect!
-      </p>
+            <h2>About Me</h2>
+      <div class="about-card">
+        <div class="about-header" onclick="toggleAboutDetails(this)">
+          <div class="about-main">
+            <p>Hi, I'm Daniel Grimes, a senior Computer Science major at Ohio University, graduating in May 2026, seeking full-time software engineering opportunities.</p>
+          </div>
+          <div class="dropdown-arrow">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+        <div class="about-content">
+          <p>
+            I'm passionate about building innovative, scalable, and impactful solutions,
+            with hands-on experience in web development, automation, AI, and blockchain technologies.
+          </p>
+          <p>
+            Currently, I'm a Junior Software Engineer at AInsure, where I rebuilt the company's website
+            using Next.js, integrated blockchain and Web3 features, and developed AI agents to automate
+            insurance workflows. I also completed a Software Engineering Internship at Siemens Digital
+            Industries Software, contributing AI-driven automation and test solutions using Python,
+            Playwright, SikuliX, and JavaScript/TypeScript.
+          </p>
+          <p>
+            I thrive in problem-solving environments and enjoy tackling challenges through technology, 
+            whether building responsive web applications, deploying AI solutions, or exploring the 
+            intersection of technology and business. I'm always looking to connect, share ideas, and 
+            explore opportunities in software development.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section id="experience">
+    <h2>Work Experience</h2>
+    
+    <div class="experience-card">
+      <div class="experience-header" onclick="toggleDetails(this)">
+        <div class="header-main">
+          <h3>Siemens Digital Industries Software</h3>
+          <p class="experience-role">Software Engineering Intern</p>
+        </div>
+        <div class="dropdown-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+      <div class="experience-content">
+        <span class="experience-date">May 2025 - August 2025</span>
+        <ul class="experience-details">
+          <li>Designed and implemented a VS Code extension to fully automate the QE VIS team's test workflow for Active Workspace Teamcenter Visualization (AW TcVis) applications.</li>
+          <li>Converted PICT model files into streamlined data outputs using Python, reducing manual processing time while preserving all enumeration instances.</li>
+          <li>Leveraged Generative AI / language model APIs to generate structured test case outlines and automatically produce Playwright and SikuliX test scripts in TypeScript.</li>
+          <li>Integrated an AI-driven debugging assistant to suggest fixes for failed tests and auto-generate missing utility functions, saving significant development and triage time.</li>
+          <li>Contributed new test cases for AW TcVis applications and enhanced team efficiency through automation.</li>
+          <li>Gained hands-on experience with JavaScript, TypeScript, Python, Playwright, SikuliX, AW TcVis, GitLab, and Generative AI technologies.</li>
+          <li>Collaborated closely with mentors and engineers to optimize workflows and integrate AI-driven solutions into production pipelines.</li>
+          <li>Engaged in Siemens' internship program workshops, Fireside chats with leadership, and professional development events to broaden business and technical knowledge.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="experience-card">
+      <div class="experience-header" onclick="toggleDetails(this)">
+        <div class="header-main">
+          <h3>AInsure</h3>
+          <p class="experience-role">Junior Software Engineer</p>
+        </div>
+        <div class="dropdown-arrow">
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+      <div class="experience-content">
+        <span class="experience-date">Augst 2025 - Present</span>
+        <ul class="experience-details">
+          <li>Rebuilt AInsure's entire company website using Next.js, implementing a modern, responsive design and scalable architecture.</li>
+          <li>Integrated blockchain and Web3 technologies to enable secure, decentralized features for insurance workflows.</li>
+          <li>Developed and deployed AI agents to automate insurance processes, improving efficiency and client experience.</li>
+          <li>Collaborated on feature development, testing, and optimization, leveraging Python, SQL, and web technologies to enhance platform performance and reliability.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -158,51 +231,6 @@
         <li>Contributed to fundraising efforts for charitable organizations</li>
         <li>Collaborated with fellow members to foster a strong and supportive community</li>
       </ul>
-    </div>
-  </section>
-
-  <!-- Work Experience Section -->
-  <section id="experience">
-    <h2>Work Experience</h2>
-    
-    <div class="experience-card">
-      <div class="experience-header" onclick="toggleDetails(this)">
-        <div class="header-main">
-          <h3>Lowe's Companies, Inc.</h3>
-          <p class="experience-role">Sales Floor Associate</p>
-        </div>
-        <div class="dropdown-arrow">
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      </div>
-      <div class="experience-content">
-        <span class="experience-date">April 2024 - Present</span>
-        <ul class="experience-details">
-          <li>Cultivated strong relationships with contractors and local customers, promoting loyalty, repeat business, and community trust in Lowe’s services.</li>
-          <li>Collaborated with cross-functional teams by covering shifts across multiple departments, enhancing store-wide efficiency and adaptability.</li>
-          <li>Assisted customers by providing expert product knowledge and personalized recommendations, ensuring a seamless shopping experience.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="experience-card">
-      <div class="experience-header" onclick="toggleDetails(this)">
-        <div class="header-main">
-          <h3>Canvass America</h3>
-          <p class="experience-role">Political Canvasser</p>
-        </div>
-        <div class="dropdown-arrow">
-          <i class="fas fa-chevron-down"></i>
-        </div>
-      </div>
-      <div class="experience-content">
-        <span class="experience-date">June 2024 - November 2024</span>
-        <ul class="experience-details">
-          <li>Engaged with diverse communities through meaningful face-to-face conversations, effectively communicating campaign messages and addressing voter concerns.</li>
-          <li>Collaborated with team members to maximize efficiency, share insights, and contribute to a dynamic and results-driven canvassing operation.</li>
-          <li>Built rapport and trust with potential voters, using active listening and persuasive speaking to encourage civic engagement.</li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -347,6 +375,11 @@
 
     function toggleDetails(header) {
       const card = header.closest('.experience-card');
+      card.classList.toggle('active');
+    }
+
+    function toggleAboutDetails(header) {
+      const card = header.closest('.about-card');
       card.classList.toggle('active');
     }
   </script>
