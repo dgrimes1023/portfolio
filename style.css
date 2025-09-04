@@ -112,33 +112,43 @@ section h2::after {
 #about {
   display: flex; /* Use flexbox for layout */
   align-items: flex-start; /* Align items to the top for better text flow */
-  gap: 3rem; /* Increased spacing between the image and the text */
+  gap: 2.5rem; /* Spacing between the content and image sections */
   text-align: left; /* Align text to the left */
+  padding: 3rem 0; /* Add some vertical padding */
+}
+
+.content-section {
+  flex: 2; /* Take up more space for the text content */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 65%; /* Make the content section wider */
+}
+
+.image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1; /* Take up less space than the content */
+  flex-shrink: 0; /* Prevent image section from shrinking */
+  max-width: 35%; /* Limit the image section width */
 }
 
 #about img {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
   object-position: center 20%; /* Move the image up to show more of the top */
   border-radius: 50%;
   border: 6px solid #fff;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
-  flex-shrink: 0; /* Prevent image from shrinking */
-  margin-top: 0.5rem; /* Slight top margin to align with text baseline */
 }
 
 #about img:hover {
   transform: scale(1.08);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
-}
-
-#about div {
-  flex: 1; /* Allow text container to take remaining space */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
 #about p {
@@ -150,6 +160,69 @@ section h2::after {
   text-align: left; /* Align heading with the text */
   margin-top: 0; /* Remove top margin */
   margin-bottom: 1.5rem; /* Add consistent bottom margin */
+}
+
+/* Download Buttons Styles */
+.download-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 0.8rem;
+  margin-bottom: 0; /* Remove bottom margin since they're now under the image */
+  justify-content: center; /* Center the buttons under the image */
+  align-items: center;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  width: 150px; /* Fixed width to ensure both buttons are the same size */
+  min-width: 150px;
+  background: linear-gradient(135deg, deepskyblue, #0077be);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #0077be, deepskyblue);
+}
+
+.download-btn i {
+  font-size: 1rem;
+}
+
+.download-btn span {
+  font-size: 0.85rem;
+}
+
+/* Responsive download buttons */
+@media (max-width: 768px) {
+  .download-buttons {
+    flex-direction: column; /* Keep buttons stacked vertically on mobile */
+    gap: 0.6rem; /* Slightly larger gap on mobile for easier touch */
+    justify-content: center; /* Center the buttons on mobile */
+  }
+  
+  .download-btn {
+    justify-content: center;
+    padding: 0.4rem 0.6rem; /* Smaller padding on mobile */
+    font-size: 0.8rem; /* Smaller text on mobile */
+    width: 140px; /* Fixed width for mobile consistency */
+    min-width: 140px;
+  }
 }
 
 /* About Section Dropdown Styles */
@@ -244,6 +317,8 @@ section h2::after {
 .education-date {
   color: #666;
   font-weight: 500;
+  white-space: nowrap; /* Prevent line breaking */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .education-degree {
@@ -251,6 +326,27 @@ section h2::after {
   font-size: 1.2rem;
   margin: 0.5rem 0;
   font-weight: 500;
+}
+
+.education-location {
+  color: #666;
+  font-style: italic;
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.education-gpa {
+  color: #2c3e50;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.education-major-minor {
+  color: #0077be;
+  margin: 0.5rem 0;
+  font-weight: 500;
+  font-size: 1.05rem;
 }
 
 .education-minor {
@@ -281,13 +377,20 @@ section h2::after {
 /* Add responsive styling for education section */
 @media (max-width: 768px) {
   .education-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    flex-direction: row; /* Keep horizontal layout on mobile */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .education-header h3 {
+    font-size: 1.2rem; /* Slightly smaller on mobile */
+    line-height: 1.2;
   }
   
   .education-date {
     font-size: 0.9rem;
+    white-space: nowrap; /* Ensure date stays on one line on mobile too */
   }
 }
 
@@ -365,16 +468,20 @@ footer {
     gap: 2rem; /* Maintain spacing */
   }
 
-  #about img {
-    order: -1; /* Move image to the top */
-    margin-bottom: 0; /* Remove bottom margin */
-    margin-top: 0; /* Remove top margin on mobile */
-    width: 180px; /* Slightly smaller on mobile */
-    height: 180px;
+  .content-section {
+    max-width: 100%; /* Full width on mobile */
+    order: 1; /* Content comes after image on mobile */
   }
 
-  #about div {
-    width: 100%; /* Full width for text container */
+  .image-section {
+    order: -1; /* Move image section to the top */
+    margin-bottom: 0; /* Remove bottom margin */
+    max-width: 100%; /* Full width on mobile */
+  }
+
+  #about img {
+    width: 200px; /* Adjusted for mobile - slightly smaller than desktop */
+    height: 200px;
   }
 
   #about h2 {
@@ -464,9 +571,16 @@ footer {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   backdrop-filter: blur(5px);
+  padding: 0 1rem;
 }
 
-.nav-menu ul {
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.nav-links {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -475,11 +589,11 @@ footer {
   gap: 2rem;
 }
 
-.nav-menu li {
+.nav-links li {
   padding: 1rem 0;
 }
 
-.nav-menu a {
+.nav-links a {
   text-decoration: none;
   color: #2c3e50;
   font-weight: 500;
@@ -488,11 +602,11 @@ footer {
   transition: color 0.3s ease;
 }
 
-.nav-menu a:hover {
+.nav-links a:hover {
   color: deepskyblue;
 }
 
-.nav-menu a::after {
+.nav-links a::after {
   content: '';
   position: absolute;
   width: 0;
@@ -503,29 +617,85 @@ footer {
   transition: width 0.3s ease;
 }
 
-.nav-menu a:hover::after {
+.nav-links a:hover::after {
   width: 100%;
 }
 
-/* Responsive navigation */
-@media (max-width: 768px) {
-  .nav-menu ul {
-    gap: 1rem;
-    padding: 0 1rem;
-  }
-
-  .nav-menu a {
-    font-size: 0.9rem;
-  }
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 1rem 0;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-@media (max-width: 480px) {
-  .nav-menu ul {
-    gap: 0.5rem;
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: #2c3e50;
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
   }
-  
-  .nav-menu li {
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 0;
+    padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links li {
     padding: 0.8rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 1rem;
+    display: block;
   }
 }
 
@@ -638,6 +808,13 @@ footer {
   font-size: 1.1rem;
   margin: 0.5rem 0 0 0;
   font-weight: 500;
+}
+
+.experience-location {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0.25rem 0 0 0;
+  font-style: italic;
 }
 
 .dropdown-arrow {

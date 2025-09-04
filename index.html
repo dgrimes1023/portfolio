@@ -19,15 +19,22 @@
 <body>
   <!-- Navigation Menu -->
   <nav class="nav-menu">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#involvement">Involvement</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-container">
+      <div class="hamburger-menu" onclick="toggleNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" onclick="closeNav()">About</a></li>
+        <li><a href="#experience" onclick="closeNav()">Experience</a></li>
+        <li><a href="#education" onclick="closeNav()">Education</a></li>
+        <li><a href="#skills" onclick="closeNav()">Skills</a></li>
+        <li><a href="#projects" onclick="closeNav()">Projects</a></li>
+        <li><a href="#involvement" onclick="closeNav()">Involvement</a></li>
+        <li><a href="#contact" onclick="closeNav()">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Header Section -->
@@ -39,9 +46,8 @@
 
   <!-- About Section -->
   <section id="about">
-  <img src="professional_headshot1.jpeg" alt="Daniel Grimes professional headshot">
-    <div>
-            <h2>About Me</h2>
+    <div class="content-section">
+      <h2>About Me</h2>
       <div class="about-card">
         <div class="about-header" onclick="toggleAboutDetails(this)">
           <div class="about-main">
@@ -56,6 +62,7 @@
             I'm passionate about building innovative, scalable, and impactful solutions,
             with hands-on experience in web development, automation, AI, and blockchain technologies.
           </p>
+          <br>
           <p>
             Currently, I'm a Junior Software Engineer at AInsure, where I rebuilt the company's website
             using Next.js, integrated blockchain and Web3 features, and developed AI agents to automate
@@ -63,6 +70,7 @@
             Industries Software, contributing AI-driven automation and test solutions using Python,
             Playwright, SikuliX, and JavaScript/TypeScript.
           </p>
+          <br>
           <p>
             I thrive in problem-solving environments and enjoy tackling challenges through technology, 
             whether building responsive web applications, deploying AI solutions, or exploring the 
@@ -72,17 +80,31 @@
         </div>
       </div>
     </div>
+    <div class="image-section">
+      <img src="professional_headshot1.jpeg" alt="Daniel Grimes professional headshot">
+      <div class="download-buttons">
+        <a href="DanielGrimes_Resume.pdf" download="Daniel_Grimes_Resume.pdf" class="download-btn left-btn">
+          <i class="fas fa-download"></i>
+          <span>Download Resume</span>
+        </a>
+        <a href="DanielGrimes_Transcript.pdf" download="Daniel_Grimes_Transcript.pdf" class="download-btn right-btn">
+          <i class="fas fa-file-alt"></i>
+          <span>Download Transcript</span>
+        </a>
+      </div>
+    </div>
   </section>
 
   <!-- Work Experience Section -->
   <section id="experience">
-    <h2>Work Experience</h2>
+    <h2>Professional Experience</h2>
     
     <div class="experience-card">
       <div class="experience-header" onclick="toggleDetails(this)">
         <div class="header-main">
           <h3>Siemens Digital Industries Software</h3>
           <p class="experience-role">Software Engineering Intern</p>
+          <p class="experience-location">Cincinnati, Ohio (Remote)</p>
         </div>
         <div class="dropdown-arrow">
           <i class="fas fa-chevron-down"></i>
@@ -108,6 +130,7 @@
         <div class="header-main">
           <h3>AInsure</h3>
           <p class="experience-role">Junior Software Engineer</p>
+          <p class="experience-location">Columbus, OH (Remote)</p>
         </div>
         <div class="dropdown-arrow">
           <i class="fas fa-chevron-down"></i>
@@ -130,15 +153,16 @@
     <h2>Education</h2>
     <div class="education-card">
       <div class="education-header">
-        <h3>Ohio University</h3>
-        <span class="education-date">2022 - 2026</span>
+        <h3>Ohio University, Russ College of Engineering and Technology</h3>
+        <span class="education-date">May 2026</span>
       </div>
-      <p class="education-degree">Bachelor of Science in Computer Science</p>
-      <p class="education-minor">Minor in Finance</p>
+      <p class="education-location">Athens, Ohio</p>
+      <p class="education-degree">Bachelor of Science</p>
+      <p class="education-gpa">GPA: 3.7</p>
+      <p class="education-major-minor">Major: Computer Science | Minor: Finance</p>
       <ul class="education-details">
-        <li>GPA: 3.7/4.0</li>
         <li>Dean's List: Fall 2022 - Present</li>
-        <li>Relevant Coursework: Data Structures, Algorithms, Software Engineering, Database Systems, Game Engine Design</li>
+        <li>Relevant Coursework: Algorithm Design & Analysis, Software Engineering Tools, Data Structures</li>
       </ul>
     </div>
   </section>
@@ -384,6 +408,20 @@
     function toggleAboutDetails(header) {
       const card = header.closest('.about-card');
       card.classList.toggle('active');
+    }
+
+    function toggleNav() {
+      const navLinks = document.querySelector('.nav-links');
+      const hamburger = document.querySelector('.hamburger-menu');
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    }
+
+    function closeNav() {
+      const navLinks = document.querySelector('.nav-links');
+      const hamburger = document.querySelector('.hamburger-menu');
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
     }
   </script>
 </body>
