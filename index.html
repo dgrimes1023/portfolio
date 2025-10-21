@@ -196,6 +196,94 @@
     </div>
   </section>
 
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-slider">
+      <button class="slider-arrow left" aria-label="Previous project" onclick="showPrevProject()"><i class="fas fa-chevron-left"></i></button>
+      <div class="projects-cards">
+        <div class="projects-track">
+          <div class="project-card">
+            <div class="project">
+              <h3>Typed Scheme Interpreter – Programming Language Implementation</h3>
+              <p>
+                A complete type-checked interpreter for a functional programming language with static typing.<br>
+                Implements parsing, type checking, and evaluation pipeline with support for functions, recursion, and closures.<br>
+                Technologies: OCaml, functional programming, type systems, compiler design.
+              </p>
+              <a href="https://github.com/dgrimes1023/typed-scheme" target="_blank" class="view-project-btn">
+                View Project
+              </a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project">
+              <h3>Hamiltonian Cycle Finder – Parallel Computing Algorithm</h3>
+              <p>
+                A parallel implementation of a Hamiltonian cycle detection algorithm using OpenMPI for distributed computing.<br>
+                Implements backtracking with work distribution across multiple processes for optimal load balancing.<br>
+                Technologies: C++, OpenMPI, MPI, parallel programming, graph algorithms.
+              </p>
+              <a href="https://github.com/dgrimes1023/hamiltonian-cycle-finder" target="_blank" class="view-project-btn">
+                View Project
+              </a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project">
+              <h3>QuickChores – Task-Based Job Platform</h3>
+              <p>
+                Developing a platform where users can post and complete tasks like cleaning, yard care, and moving assistance.<br>
+                Built the main page with Next.js and Node.js, with a focus on responsive design using Tailwind CSS.
+              </p>
+              <a href="https://github.com/dgrimes1023/QuickChores" target="_blank" class="view-project-btn">
+                View Project
+              </a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project">
+              <h3>Hash Cracker – Distributed Password Cracking Tool</h3>
+              <p>
+                A high-performance distributed password hash cracking tool built with MPI for parallel processing.<br>
+                Performs brute-force attacks on SHA256-hashed passwords by distributing workload across multiple processes.<br>
+                Technologies: C, OpenMPI, SHA256, cryptography, distributed computing.
+              </p>
+              <a href="https://github.com/dgrimes1023/hashcracker" target="_blank" class="view-project-btn">
+                View Project
+              </a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project">
+              <h3>Python Wordle Recreation with AI Solver</h3>
+              <p>
+                Recreated the game "Wordle" with a five-person team, contributing to the dynamic GUI and AI algorithm for solving puzzles.<br>
+                Technologies: Python, Pygame, and GitHub.
+              </p>
+              <a href="https://github.com/OU-CS3560/s24-wordle-fibble-3" target="_blank" class="view-project-btn">
+                View Project
+              </a>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="project">
+              <h3>Boop – Strategy Board Game</h3>
+              <p>
+                Created a custom board game using C++ by integrating a pre-existing Game class and developing a Boop class for specific rules.<br>
+                Used tools like GDB, Valgrind, and GitHub.
+              </p>
+              <a href="https://github.com/dgrimes1023/BoopGame" target="_blank" class="view-project-btn">
+                View Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="slider-arrow right" aria-label="Next project" onclick="showNextProject()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
   <!-- Skills Section -->
   <section id="skills">
     <h2>Skills</h2>
@@ -208,53 +296,6 @@
         <li><strong>Problem Solving & Software Optimization:</strong> Debugging, Unit Testing, Data Analysis</li>
     </ul>
 </section>
-
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <a href="https://github.com/dgrimes1023/QuickChores" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="project">
-        <h3>QuickChores – Task-Based Job Platform</h3>
-        <p>
-          Developing a platform where users can post and complete tasks like cleaning, yard care, and moving assistance.
-          Built the main page with Next.js and Node.js, with a focus on responsive design using Tailwind CSS.
-        </p>
-      </div>
-    </a>
-
-    <a href="https://github.com/dgrimes1023/TaskMate" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="project">
-        <h3>TaskMate – A Modern Task Tracker for Daily Workflow</h3>
-        <p>
-          A sleek and efficient to-do list app designed to help users organize and manage tasks effortlessly.  
-          Built with Next.js and Node.js, featuring a responsive UI styled with Tailwind CSS for a seamless user experience.
-        </p>
-      </div>
-    </a>
-    
-
-    <a href="https://github.com/OU-CS3560/s24-wordle-fibble-3" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="project">
-        <h3>Python Wordle Recreation with AI Solver</h3>
-        <p>
-          Recreated the game "Wordle" with a five-person team, contributing to the dynamic GUI and AI algorithm
-          for solving puzzles. Technologies: Python, Pygame, and GitHub.
-        </p>
-      </div>
-    </a>
-
-    <a href="https://github.com/dgrimes1023/BoopGame" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="project">
-        <h3>Boop – Strategy Board Game</h3>
-        <p>
-          Created a custom board game using C++ by integrating a pre-existing Game class and developing
-          a Boop class for specific rules. Used tools like GDB, Valgrind, and GitHub.
-        </p>
-      </div>
-    </a>
-  </section>
 
   <!-- Involvement Section -->
   <section id="involvement">
@@ -323,6 +364,24 @@
   </div>
 
   <script>
+    // Project slider functionality with smooth transitions and fixed card size
+    const projectsTrack = document.querySelector('.projects-track');
+    const projectCards = document.querySelectorAll('.project-card');
+    let currentProject = 0;
+    function updateProjectSlider() {
+      const cardWidth = 600; // Fixed width to match CSS
+      projectsTrack.style.transform = `translateX(-${currentProject * cardWidth}px)`;
+    }
+    function showPrevProject() {
+      currentProject = (currentProject - 1 + projectCards.length) % projectCards.length;
+      updateProjectSlider();
+    }
+    function showNextProject() {
+      currentProject = (currentProject + 1) % projectCards.length;
+      updateProjectSlider();
+    }
+    window.addEventListener('resize', updateProjectSlider);
+    updateProjectSlider();
     // Scroll to top functionality
     const scrollBtn = document.querySelector('.scroll-top');
     window.addEventListener('scroll', () => {
